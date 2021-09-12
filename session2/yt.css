@@ -1,0 +1,67 @@
+.navigation {
+  display:flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  list-style: none;
+  margin: 0; 
+  background: darkred;
+}
+
+.navigation a {
+  text-decoration: none;
+
+  padding: 1em;
+  color:whitesmoke ;
+}
+
+.navigation a:hover {
+  background:lightskyblue;
+}
+
+.hbg{
+  width:100%;
+  height: 100px;
+  background-image: url("image/logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+
+  
+
+}
+
+.foot{
+                float: left;
+                width: 27%;
+               height: 300px;
+            
+            }
+.foot  p {      
+                font-size:40px;
+                font-weight:bold;
+                color: black;
+            }
+
+.foot ul{
+                font-size:20px;
+                font-weight:bold;
+                color: black;
+
+}            
+
+.copyright {
+ 
+  font-size:20px;
+  
+}
+.foo{
+                float: left;
+                width: 100%;
+               height: 300px;
+             }
+.copy{
+  font-size: 20px;
+}
+
+span{
+  font-weight: bold;
+}
