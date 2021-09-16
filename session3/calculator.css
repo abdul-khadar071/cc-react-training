@@ -1,0 +1,70 @@
+h1 {
+	text-align: center;
+	color:black;
+	font-size: 50px;
+	padding: 50px;
+	}
+.formstyle
+{
+width:max-content;
+margin: auto;
+border: 3px solid skyblue;
+border-radius: 5px;
+padding: 20px;
+text-align: center;
+background-color: lightgrey;
+}
+
+
+button:hover
+{
+background-color: green;
+}
+	
+
+
+
+
+.screen{
+width: calc(100% - lem);
+margin: 5px;
+font-size: 25px;
+padding: 5px;
+background-color: lightgreen;
+}	
+
+.buttons{
+	width: 340px;
+	display: flex;
+	flex-wrap: wrap;
+	
+}
+
+button{
+	flex-grow: 1;
+	flex-basis: 20%;
+	color: black;
+	font-weight: bold;
+	cursor:pointer;
+	font-size: 20px;
+	width: 50px;
+	height: 50px;
+	margin: 5px;
+
+}
+.num{
+	background-color:gray;
+
+}
+.op{
+	background-color: orange;
+}
+.eq{
+	background-color: green;
+}
+.clr{
+	background-color: red;
+}
+.del{
+	background-color: skyblue;
+}
