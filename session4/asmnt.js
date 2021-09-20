@@ -1,4 +1,4 @@
-//1 fin the unique items in the array
+//1. find the unique items in the array
 
 let values=["green","green","red","red","yellow","pink","pink","yellow"];
 let arr=values;
