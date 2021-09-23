@@ -1,0 +1,189 @@
+0:Is JavaScript single threaded or multithreaded? What does it mean to be any?
+
+answer:
+     java script is a single-threaded language .
+     A single-thread language is one with a single call stack and a single memory heap, It means that it runs only one thing at a time.
+
+
+
+1:What are promises? Why are they used?
+answer:
+
+Promises are used to handle asynchronous operations in JavaScript. 
+They are easy to manage when dealing with multiple asynchronous operations where callbacks can create callback hell leading to unmanageable code.
+Prior to promises events and callback functions were used but they had limited functionalities and created unmanageable code.
+Promises are the ideal choice for handling asynchronous operations in the simplest manner. 
+They can handle multiple asynchronous operations easily and provide better error handling than callbacks and events.
+
+
+
+2:What do async/await do? Explain it in your own words.
+answer:
+
+async:
+It allows us to write promises based code as if it was synchronous and it checks that we are not breaking the execution thread. 
+It operates asynchronously via the event-loop. Async functions will always return a value. 
+It makes sure that a promise is returned and if it is not returned then javascript automatically wraps it in a promise which is resolved with its value
+
+await:
+Await function is used to wait for the promise. It could be used within the async block only.
+It makes the code wait until the promise returns a result. It only makes the async block wait.
+
+
+
+3:How do we catch errors in async functions?
+answer:
+
+When an error is thrown in an async function, we can catch it with a try {} catch {}.
+
+async function fails() {
+    throws Error();
+}
+
+async function myFunc() {
+    try {
+        await fails();
+    } catch (e) {
+        console.log("that failed", e); 
+    }
+}
+ 
+
+
+
+ 4:What do async functions return?
+
+answer:
+ Async functions always return a promise. 
+ If the return value of an async function is not explicitly a promise, it will be implicitly wrapped in a promise.
+
+
+
+ 5:What do then() consumers in promises return?
+ answer:
+ When a promise is either resolved or rejected, then() is invoked.
+ parameters
+ If promise is resolved, first function is executed and a result is received.
+ If promise is rejected, second function is executed and an error is displayed on the screen.
+
+
+6: Write the explicit equivalent of Promise.resolve(100)
+answer:
+
+
+function wait(ms) {
+  return new Promise(r => setTimeout(r, ms));
+}
+async function equivlent{
+	await wait(100);
+	return "promise resolved";
+}
+
+
+7:What are the states a promise can be in?
+answer:
+pending: initial state, neither fulfilled nor rejected.
+fulfilled: meaning that the operation was completed successfully.
+rejected: meaning that the operation failed.
+
+
+ 
+ 8: What happens if neither resolve nor reject is called within a promise?
+
+answer:
+If we didn't called, then that code generally never gets to finish its work.or it will be in the state of pending.                                                                                                                                      
+
+
+9:What happens if multiple resolve or reject is called within a promise?
+
+answers:
+Since promises can only resolve once (to either fulfilled or rejected), the first resolution wins and any further calls will be ignored.
+
+
+
+10:What does the finally() method on promise do? Provide your explanation
+
+answer:
+The finally() method can be useful if you want to do some processing or cleanup once the promise is settled, regardless of its outcome.
+The finally() method of the Promise is used to return a Promise when a Promise is settled, that is, it is either fulfilled or rejected.
+This helps to avoid duplicating code in both the promise's then() and catch() handlers.
+
+
+
+11:What are microtasks in JS?
+
+answers:
+A microtask is a short function which is executed after the function or program which created it exits and only if the JavaScript execution stack is empty, 
+but before returning control to the event loop being used by the user agent to drive the script's execution environment.
+A Micro-task is also capable of en-queuing other micro-tasks.
+
+
+
+12: Write a simple print() function that accepts a callback, which gets called after 3 seconds. The callback function could be anything that prints out on the screen
+
+answer:
+
+function print() {  
+  console.log("This message is shown after 3 seconds");
+}
+ 
+setTimeout(print ,3000);
+
+
+
+ex2:
+function print(name,call) {
+    console.log('good morning'+ ' ' +name);
+
+}
+
+callback function
+function call(){
+    console.log("calling after 3 seconds");
+}
+  setTimeout( call,3000);
+print('john',call);
+
+ 
+
+
+13: Delay with a promise
+
+answer:
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+delay(3000).then(() => alert('runs after 3 seconds'));
+
+
+
+14:Consume the following promise using `await`.
+
+answer:
+
+async function consm(){
+let promise = new Promise((res,rej) => {
+    setTimeout(() => res("Resolved!"),3000)
+} );
+let result= await promise;
+alert(result);
+}
+console.log("response value is:");
+consm();
+
+
+ 
+ 15: What is the difference between the following two lines of code:
+
+promise.then(f1).catch(f2);
+and
+promise.then(f1, f2);
+Provide an explanation for your answer.
+
+answer:
+
+In the first promise.then(f1).catch(f2) The difference is that if an error happens in f1, then it is handled by.
+but the second one  promise.then(f1, f2) here there is no error catching is there.
+then passes results/errors to the next .then/catch. So in the first example, there’s a catch below, and in the second one there isn’t, so the error is unhandled.
+
