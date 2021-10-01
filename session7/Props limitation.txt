@@ -1,0 +1,7 @@
+2. What are the limitations of props? 
+
+answer:
+we can only pass props from parent to child .and we cannot pass the props from child to parent
+
+solution:
+In this method, you store the property in the parent component and pass down a function that allows the child to update the prop stored in the parent component.

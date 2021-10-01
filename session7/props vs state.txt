@@ -1,0 +1,41 @@
+1. Write a brief about the differences between props and state? When do we use each? 
+
+
+State
+The state is an updatable structure that is used to contain data or information about the component and can change over time.
+The change in state can happen as a response to user action or system event. It is the heart of the react component which determines the behavior of the component and how it will render.
+A state must be kept as simple as possible. 
+It represents the component's local state or information. 
+It can only be accessed or modified inside the component or by the component directly.
+
+
+
+Props
+Props are read-only components. 
+It is an object which stores the value of attributes of a tag and work similar to the HTML attributes. 
+It allows passing data from one component to other components.
+It is similar to function arguments and can be passed to the component the same way as arguments passed in a function. 
+Props are immutable so we cannot modify the props from inside the component.
+
+differences are
+
+props:
+
+1.	Props are read-only.	
+2.	Props are immutable.	
+3.	Props allow you to pass data from one component to other components as an argument.	
+4.	Props can be accessed by the child component.
+5.	Props are used to communicate between components.
+6.	Stateless component can have Props.
+7.	Props make components reusable.	State cannot make components reusable.
+8.	Props are external and controlled by whatever renders the component. 
+
+states:
+1.	State changes can be asynchronous.
+2.	State is mutable.
+3.	State holds information about the components.
+4.	State cannot be accessed by child components.
+5.	States can be used for rendering dynamic changes with the component.
+6.	Stateless components cannot have State.
+7.	State cannot make components reusable.
+8.	The State is internal and controlled by the React Component itself.
