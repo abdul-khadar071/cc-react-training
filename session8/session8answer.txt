@@ -1,0 +1,43 @@
+1: What is the difference between composition and inheritance? Which paradigm is preferred in React?  Write a brief note about it in your own words.
+answer:
+		Composition and inheritance are the approaches to use multiple components together in React js . 
+		This helps in code reuse. 
+		React recommend using composition instead of inheritance as much as possible and inheritance should be used in very specific cases only.
+
+		Differences:
+
+		composition:
+
+		1:Follows has-a relationship                                 
+		2:Composition allows code-reuse.	  
+        3:In composition, you will no need to extend classes	
+        4:In composition, you will no need to Mixin.	
+        5:The composition is more flexible.	
+
+        
+        inheritence:
+
+        1:Follows is-a relationship
+        2:Inheritance does not allow code-reuse.
+        3.In inheritance, you will need to extend classes.
+        4.In inheritance, Mixin plays a major role.
+        5.Inheritance is less flexible compared to composition.
+
+2: In what cases do we need to 'lift the state up'?
+answer:
+		If the data in “parent and children components” or in “cousin components” is Not in Sync
+
+3: What is a handler function. When do we use it?
+answer:
+		A handler function which is specialized in a certain type of data or focused on certain special tasks
+		 handler enables you to call a function and trigger an action when a user clicks an element, such as a button, in your app.
+   
+
+    Event handlers determine what action is to be taken whenever an event is fired. 
+    This could be a button click or a change in a text input.
+    
+    Synthetic events
+     It has the same interface as the browser’s native event
+
+The React onClick event handler enables us to call a function and trigger an action when a user clicks an element,
+such as a button, in our app.
