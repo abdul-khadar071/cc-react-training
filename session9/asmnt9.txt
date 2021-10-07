@@ -1,0 +1,79 @@
+1: What are controlled / uncontrolled components? Why do we use controlled components?
+answer:
+
+A Controlled Component is one that takes its current value through props and notifies changes through callbacks like onChange. A parent component "controls" it by handling the callback and managing its own state and passing the new values as props to the controlled component. You could also call this a "dumb component".
+
+A Uncontrolled Component is one that stores its own state internally, and you query the DOM using a ref to find its current value when you need it. This is a bit more like traditional HTML.
+
+2: What are side effects? Write a note about them
+
+answer:
+Side effects are basically anything that affects something outside of the scope of the current function 
+that’s being executed.
+
+
+API requests to our backend service
+Calls to our authentication service
+Error tracking calls to Sentry
+
+3: What is the uni-directional data flow in React?
+
+answer:
+
+In React, data naturally flows down the component tree, from the app's top-level component down to the child components, via props. This is called "unidirectional data flow"
+
+4: List down and explain the 3 ways in which useEffect() hook can be used, with relevant examples.
+
+answer:
+
+ componentDidMount
+ componentDidUpdate
+ componentWillUnmount
+
+
+ componentDidMount
+
+function Counter() {
+  const [count, setCount] = useState(localStorage.getItem("count") || 0);
+
+  useEffect(() => {
+    localStorage.setItem("count", count);
+  }, [count]);
+  return (
+    <div>
+      <h3>You clicked {count} times</h3>
+      <button onClick={() => setCount(count + 1)}>+</button>
+      <button onClick={() => setCount(count - 1)}>-</button>
+    </div>
+  );
+}
+
+
+
+
+componentDidUpdate
+
+function Greate({ name }) {
+  const message = `Hello, ${name}!`;
+  useEffect(() => {
+    document.title = `Greetings to ${name}`;
+  }, [name]);
+  return <div>{message} </div>;
+}
+
+
+
+componentWillUnmount
+
+function RepeatMessage({ message }) {
+  useEffect(() => {
+    const id = setInterval(() => {
+      console.log(message);
+    }, 2000);
+    return () => {
+      clearInterval(id);
+    };
+  }, [message]);
+  return 
+  <div>I'm logging to console "{message}"</div>;
+}
